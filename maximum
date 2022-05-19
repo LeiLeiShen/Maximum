@@ -1,0 +1,133 @@
+import java.util.Arrays;
+public class Maximum 
+{
+    public static int maxima(int [] array)
+    {
+        int m = 0;
+        int i=1;
+        while ( i < array.length)
+        {
+            if (array[i] > array[m])
+            {
+                m = i;
+            } 
+            i++;
+        }
+        return m;
+    }
+    public static int maximum(int [] array)
+    {
+        int temmaximum = array[0];
+        int i=1;
+        while ( i < array.length)
+        {
+            if (array[i] > temmaximum)
+               temmaximum = array[i];
+            i++;
+        }
+         
+        return temmaximum;
+    }
+    public static int minimum(int [] array)
+    {
+        int temminimum = array[0];
+        int i=1;
+        while ( i < array.length)
+        {
+            if (array[i] < temminimum)
+                temminimum = array[i];
+            i++;
+        }
+
+        return temminimum;
+    }
+    public static int minima(int [] array)
+    {
+        int m = 0;
+        int i=1;
+        while ( i < array.length)
+        {
+            if (array[i] < array[m])
+            {
+                m = i;
+            }
+            i++;
+        }
+        return m;
+    }
+
+    // public static int [] extremal(int [] array)
+    // {
+    //     if (array.length == 0)
+    //         return null;
+    //     int max = 0;
+    //     int min = 0;
+    //     int i=1;
+    //     while ( i < array.length)
+    //     {
+    //         if (array[i] >array[max])
+    //         {    
+    //             max = i;
+    //         }
+    //         if (array[i] <array[min])
+    //         {   
+    //             min = i;
+    //         }
+    //         i++;
+    //     }
+    //     int[] answer = {array[min],array[max]};
+    
+    //     return answer[1];
+
+    
+        
+    // }
+    public static int [] extremal(int [] array)
+    {
+        int max = array[0];
+        int min = array[0];
+        int i=1;
+        if (array.length ==0)
+        {
+     return null;
+        }
+        while ( i < array.length)
+        {
+            if (array[i] > max){
+               max = array[i];
+               i++;
+            }else if(array[i] < min)
+               min = array[i];
+               i++;
+        }
+        int [] arr2=new int[] {max,min}; 
+        return arr2;
+    }
+    // test driver
+    public static void main(String[] args) 
+    {
+       int [] arr = new int[]{234,23,56,15,434};
+       int [] arr2 = extremal(arr);
+       for (int i=0;i<2;i++){
+         System.out.println(arr2[i]);
+       }
+    }
+}
+    
+    
+    
+    
+    
+    
+    
+    
+    //test driver
+    // public static void main(String[] args) 
+    // {
+    //    int [] arr = new int[]{342,34,233,456};
+    //    System.out.println(maximum(arr));
+    //    System.out.println(maxima(arr));
+    //    System.out.println(minimum(arr));
+    //    System.out.println(minima(arr));
+    //    System.out.println(extremal(arr));
+    // }
